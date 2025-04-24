@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Emotion Crossy Road</title>
+  <script src="https://cdn.jsdelivr.net/npm/phaser@3.55.2/dist/phaser.js"></script>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: #333;
+      color: white;
+      font-family: Arial, sans-serif;
+    }
+    #game-container {
+      margin-top: 20px;
+    }
+    #controls {
+      margin-top: 20px;
+      padding: 10px;
+      background-color: #222;
+      border-radius: 5px;
+      width: 800px;
+      text-align: center;
+    }
+    button {
+      padding: 10px 15px;
+      margin: 5px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+    #emotion-display {
+      margin-top: 10px;
+      font-size: 18px;
+    }
+    #voice-status {
+      margin-top: 10px;
+      font-size: 16px;
+      color: #ffcc00;
+    }
+    .status-indicator {
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      margin-right: 5px;
+    }
+    .active {
+      background-color: #4CAF50;
+    }
+    .inactive {
+      background-color: #f44336;
+    }
+  </style>
+</head>
+<body>
+  <h1>Emotion Crossy Road</h1>
+  <div id="game-container"></div>
+  <div id="controls">
+    <div>
+      <button id="start-voice">Start Voice Control</button>
+      <button id="start-emotion">Start Emotion Detection</button>
+      <button id="restart-game">Restart Game</button>
+    </div>
+    <div id="voice-status">
+      Voice Control: <span class="status-indicator inactive" id="voice-indicator"></span>
+      <span id="voice-text">Inactive</span>
+    </div>
+    <div id="emotion-display">
+      Current Emotion: <span id="emotion-text">Not detected</span>
+    </div>
+    <div style="margin-top: 15px;">
+      <p>Voice Commands: "forward", "back", "left", "right"</p>
+      <p>Game adjusts difficulty based on your detected emotions!</p>
+    </div>
+  </div>
+
+  <script src="game.js"></script>
+  <script src="voiceControl.js"></script>
+  <script src="emotion.js"></script>
+</body>
+</html>
